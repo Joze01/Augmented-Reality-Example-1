@@ -6,5 +6,5 @@ AR app for furniture, using ARCore with kotlin
 https://developers.google.com/ar/
 
 
-##Suported devices 
+## Suported devices 
 https://developers.google.com/ar/discover/supported-devices
