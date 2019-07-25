@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         arFragment = supportFragmentManager.findFragmentById(sceneform_fragment_view.id) as ArFragment
 
+        //default model
         selectedObject = Uri.parse("model.sfb")
 
         //tab listener for the ArFragment
