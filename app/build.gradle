@@ -3,12 +3,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.ar.sceneform.plugin'
 
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.applaudostudios.karcore"
-        minSdkVersion 22
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -20,6 +21,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -30,4 +35,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //Dependence for AR core sceneform
+    implementation "com.google.ar.sceneform.ux:sceneform-ux:1.10.0"
 }
+
+
+sceneform.asset('sampledata/smalllamp/model.obj',
+        'default',
+        'sampledata/smalllamp/model.sfa',
+        'src/main/assets/model')
+
+sceneform.asset('sampledata/model_two/LampPost.obj',
+        'default',
+        'sampledata/model_two/LampPost.sfa',
+        'src/main/assets/LampPost')

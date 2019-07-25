@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KARCore</string>
+    <string name="big_lamp">Big Lamp</string>
+    <string name="small_table">small table</string>
 </resources>
