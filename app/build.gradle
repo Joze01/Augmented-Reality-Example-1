@@ -49,3 +49,8 @@ sceneform.asset('sampledata/model_two/LampPost.obj',
         'default',
         'sampledata/model_two/LampPost.sfa',
         'src/main/assets/LampPost')
+
+sceneform.asset('sampledata/rocket/rocket.obj',
+        'default',
+        'sampledata/rocket/rocket.sfa',
+        'src/main/assets/rocket')
