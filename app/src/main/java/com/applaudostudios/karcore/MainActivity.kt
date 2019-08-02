@@ -23,15 +23,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //init Fragment
+        //Init Fragment
         arFragment = supportFragmentManager.findFragmentById(sceneform_fragment_view.id) as ArFragment
 
-        //default model
-        selectedObject = Uri.parse("model.sfb")
+        //Default model
+        setModelPath("rocket.sfb")
 
-        //tab listener for the ArFragment
+        //Tab listener for the ArFragment
         arFragment.setOnTapArPlaneListener { hitResult, plane, _ ->
-            //if surface is not horizontal and upward facing
+            //If surface is not horizontal and upward facing
             if (plane.type != Plane.Type.HORIZONTAL_UPWARD_FACING) {
                 //return for the callback
                 return@setOnTapArPlaneListener
@@ -52,13 +52,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     /***
-     * function to handle the renderable object and place objecto in scene
+     * function to handle the renderable object and place object in scene
      */
     private fun placeObject(fragment: ArFragment, anchor: Anchor, modelUri: Uri) {
         val modelRenderable = ModelRenderable.builder()
             .setSource((fragment.requireContext()), modelUri)
             .build()
-        //when the model render is builded add node to scene
+        //when the model render is build add node to scene
         modelRenderable.thenAccept { renderableObject -> addNodeToScene(fragment, anchor, renderableObject) }
         //handle error
         modelRenderable.exceptionally {
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun setModelPath(modelFileName: String) {
         selectedObject = Uri.parse(modelFileName)
-        val toast = Toast.makeText(applicationContext, "bigLamp", Toast.LENGTH_SHORT)
+        val toast = Toast.makeText(applicationContext, modelFileName, Toast.LENGTH_SHORT)
         toast.show()
     }
 }
