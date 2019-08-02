@@ -37,7 +37,7 @@
     file: 'sampledata/model_two/LampPost.obj',
     name: 'LampPost',
     recenter: 'root',
-    scale: 0.060885000000000002,
+    scale: 0.0060885000000000002,
   },
   samplers: [
     {
